@@ -53,29 +53,29 @@ const done = () => { // step 1: create function called done.
     console.log("Nailed it!");
 }
 
-
 // countdown(10, done); //
 
-// let ready = true;
+//PROMISES PROMISES ;)
 
-// const orderingChickenSandwich = () => {
-// return new Promise((resolve, reject) => {
-//     if(ready === true) {
-//         resolve();
-//     } else {
-//         reject('Nothing to order');
-//     }
-    
-// });
-// }
-// orderingChickenSandwich.then(() => {
-//     let order = {
-//         sandwich: "chicken",
-//         veggies: "lettuce"
-//     }
-//     console.log(order);
-// }).catch((fromReject) => {
-//     let err = new Error(fromReject);
-//     console.log(err);
-// });
+const lunchTime = false;
+
+let orderMeSomeFood = () => {
+    return new Promise((resolve, reject) => {
+        if(lunchTime === true) {
+            order = {
+                lunch: 'Pizza',
+                drink: 'Coke'
+            }
+            resolve(order);
+        } else {
+            let uhOh = new Error('Nothing to order');
+            reject(uhOh);
+        }
+    });
+}
+orderMeSomeFood().then((data) => {
+    console.log(data);
+}).catch((err) => {
+    console.log(err);
+});
 
